@@ -58,6 +58,8 @@ builder.Services.AddAuthorization();
 // -------------------------------------------------------
 builder.Services.AddMassTransit(x =>
 {
+    x.AddConsumers(typeof(SearchService.Infrastructure.AccommodationCreatedConsumer).Assembly);
+
     x.UsingRabbitMq((context, cfg) =>
     {
         cfg.Host(rabbitHost, h =>
