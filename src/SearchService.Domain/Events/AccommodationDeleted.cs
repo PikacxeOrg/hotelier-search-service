@@ -1,3 +1,10 @@
-namespace SearchService.Domain;
+namespace Hotelier.Events;
 
-public record AccommodationDeleted(Guid AccommodationId);
+/// <summary>
+/// Consumer-side DTO for AccommodationDeleted.
+/// </summary>
+public record AccommodationDeleted
+{
+    public Guid AccommodationId { get; init; }
+    public Guid HostId { get; init; }
+}
