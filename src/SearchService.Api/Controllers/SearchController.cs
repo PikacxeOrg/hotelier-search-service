@@ -87,7 +87,7 @@ public class SearchController(
                     return null; // Not available for these dates
 
                 unitPrice = window.Price;
-                var nights = (int)(request.CheckOut.Value.Date - request.CheckIn.Value.Date).TotalDays;
+                var nights = request.CheckOut.Value.DayNumber - request.CheckIn.Value.DayNumber;
                 if (nights < 1) nights = 1;
 
                 totalPrice = window.PriceType == "PerGuest" && request.NumberOfGuests.HasValue

@@ -7,9 +7,9 @@ public class SearchRequest
 
     public int? NumberOfGuests { get; set; }
 
-    public DateTime? CheckIn { get; set; }
+    public DateOnly? CheckIn { get; set; }
 
-    public DateTime? CheckOut { get; set; }
+    public DateOnly? CheckOut { get; set; }
 
     /// <summary>Minimum average rating filter.</summary>
     public double? MinRating { get; set; }

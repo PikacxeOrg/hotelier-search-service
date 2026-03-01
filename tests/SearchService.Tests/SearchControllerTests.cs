@@ -113,8 +113,8 @@ public class SearchControllerTests
         [
             new AvailabilityWindow
             {
-                FromDate = new DateTime(2025, 7, 1),
-                ToDate = new DateTime(2025, 7, 31),
+                FromDate = new DateOnly(2025, 7, 1),
+                ToDate = new DateOnly(2025, 7, 31),
                 Price = 100m,
                 PriceType = "PerUnit",
                 IsAvailable = true
@@ -126,8 +126,8 @@ public class SearchControllerTests
 
         var result = await _sut.Search(new SearchRequest
         {
-            CheckIn = new DateTime(2025, 7, 5),
-            CheckOut = new DateTime(2025, 7, 10)
+            CheckIn = new DateOnly(2025, 7, 5),
+            CheckOut = new DateOnly(2025, 7, 10)
         });
 
         var ok = result.Should().BeOfType<OkObjectResult>().Subject;
@@ -143,8 +143,8 @@ public class SearchControllerTests
         [
             new AvailabilityWindow
             {
-                FromDate = new DateTime(2025, 7, 1),
-                ToDate = new DateTime(2025, 7, 31),
+                FromDate = new DateOnly(2025, 7, 1),
+                ToDate = new DateOnly(2025, 7, 31),
                 Price = 100m,
                 PriceType = "PerUnit",
                 IsAvailable = true
@@ -155,8 +155,8 @@ public class SearchControllerTests
 
         var result = await _sut.Search(new SearchRequest
         {
-            CheckIn = new DateTime(2025, 7, 5),
-            CheckOut = new DateTime(2025, 7, 10),
+            CheckIn = new DateOnly(2025, 7, 5),
+            CheckOut = new DateOnly(2025, 7, 10),
             NumberOfGuests = 2
         });
 
@@ -173,8 +173,8 @@ public class SearchControllerTests
         [
             new AvailabilityWindow
             {
-                FromDate = new DateTime(2025, 7, 1),
-                ToDate = new DateTime(2025, 7, 31),
+                FromDate = new DateOnly(2025, 7, 1),
+                ToDate = new DateOnly(2025, 7, 31),
                 Price = 50m,
                 PriceType = "PerGuest",
                 IsAvailable = true
@@ -185,8 +185,8 @@ public class SearchControllerTests
 
         var result = await _sut.Search(new SearchRequest
         {
-            CheckIn = new DateTime(2025, 7, 5),
-            CheckOut = new DateTime(2025, 7, 10),
+            CheckIn = new DateOnly(2025, 7, 5),
+            CheckOut = new DateOnly(2025, 7, 10),
             NumberOfGuests = 3
         });
 
@@ -202,8 +202,8 @@ public class SearchControllerTests
         [
             new AvailabilityWindow
             {
-                FromDate = new DateTime(2025, 7, 1),
-                ToDate = new DateTime(2025, 7, 31),
+                FromDate = new DateOnly(2025, 7, 1),
+                ToDate = new DateOnly(2025, 7, 31),
                 Price = 50m,
                 PriceType = "PerUnit",
                 IsAvailable = true
@@ -213,8 +213,8 @@ public class SearchControllerTests
         [
             new AvailabilityWindow
             {
-                FromDate = new DateTime(2025, 7, 1),
-                ToDate = new DateTime(2025, 7, 31),
+                FromDate = new DateOnly(2025, 7, 1),
+                ToDate = new DateOnly(2025, 7, 31),
                 Price = 500m,
                 PriceType = "PerUnit",
                 IsAvailable = true
@@ -225,8 +225,8 @@ public class SearchControllerTests
 
         var result = await _sut.Search(new SearchRequest
         {
-            CheckIn = new DateTime(2025, 7, 5),
-            CheckOut = new DateTime(2025, 7, 10),
+            CheckIn = new DateOnly(2025, 7, 5),
+            CheckOut = new DateOnly(2025, 7, 10),
             MaxPrice = 100m
         });
 
