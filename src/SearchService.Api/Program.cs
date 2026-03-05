@@ -98,6 +98,8 @@ builder.Services.AddOpenTelemetry()
         .AddMeter("Microsoft.AspNetCore.Server.Kestrel")
         .AddMeter("System.Net.Http")
         .AddMeter("System.Net.NameResolution")
+        .AddRuntimeInstrumentation()
+        .AddProcessInstrumentation()
         .AddPrometheusExporter())
     .WithTracing(tracing => tracing
         .AddAspNetCoreInstrumentation()
